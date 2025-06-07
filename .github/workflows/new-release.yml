@@ -14,22 +14,22 @@ jobs:
               id: set_tag
               run: echo "TAG=$(date +'%y.%m.%d')" >> $GITHUB_OUTPUT
 
-            - name: Compress windows and windows-update directories
+            - name: Compress policy directories
               run: |
-                    zip -r release.zip windows windows-update
+                    zip -r intune-baseline.zip windows windows-update
 
             - name: Create Git tag
               run: |
                     git config user.name "github-actions[bot]"
                     git config user.email "github-actions[bot]@users.noreply.github.com"
-                    git tag ${{ steps.set_tag.outputs.TAG }}
-                    git push origin ${{ steps.set_tag.outputs.TAG }}
+                    git tag "v${{ steps.set_tag.outputs.TAG }}"
+                    git push origin "v${{ steps.set_tag.outputs.TAG }}"
 
             - name: Create GitHub Release
               uses: softprops/action-gh-release@v2
               with:
-                    tag_name: ${{ steps.set_tag.outputs.TAG }}
-                    name: Release ${{ steps.set_tag.outputs.TAG }}
-                    files: release.zip
+                    tag_name: "v${{ steps.set_tag.outputs.TAG }}"
+                    name: "v${{ steps.set_tag.outputs.TAG }}"
+                    files: intune-baseline.zip
               env:
                     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
