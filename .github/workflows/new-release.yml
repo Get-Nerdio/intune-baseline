@@ -22,14 +22,14 @@ jobs:
               run: |
                     git config user.name "github-actions[bot]"
                     git config user.email "github-actions[bot]@users.noreply.github.com"
-                    git tag "v${{ steps.set_tag.outputs.TAG }}"
-                    git push origin "v${{ steps.set_tag.outputs.TAG }}"
+                    git tag "v${{ steps.set_tag.outputs.TAG }}.${{ github.run_number }}"
+                    git push origin "v${{ steps.set_tag.outputs.TAG }}.${{ github.run_number }}"
 
             - name: Create GitHub Release
               uses: softprops/action-gh-release@v2
               with:
-                    tag_name: "v${{ steps.set_tag.outputs.TAG }}"
-                    name: "v${{ steps.set_tag.outputs.TAG }}"
+                    tag_name: "v${{ steps.set_tag.outputs.TAG }}.${{ github.run_number }}"
+                    name: "v${{ steps.set_tag.outputs.TAG }}.${{ github.run_number }}"
                     files: intune-baseline.zip
               env:
                     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
