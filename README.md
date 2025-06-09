@@ -1,6 +1,6 @@
 # Intune Baseline
 
-Microsoft Intune baseline configurations.
+Microsoft Intune baseline configurations. Review [policy descriptions](./POLICIES.md).
 
 ## windows
 
