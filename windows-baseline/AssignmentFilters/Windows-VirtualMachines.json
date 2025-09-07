@@ -9,7 +9,7 @@
     "lastModifiedDateTime@odata.type":  "#DateTimeOffset",
     "lastModifiedDateTime":  "2022-07-01T03:00:04.1934575Z",
     "displayName":  "Windows-VirtualMachines",
-    "description":  "Microsoft Hyper-V, VMware Workstation / Fusion, Parallels Desktop, Oracle VirtualBox",
+    "description":  "Filter for Microsoft Hyper-V, VMware Workstation / Fusion, Parallels Desktop, Oracle VirtualBox",
     "platform@odata.type":  "#microsoft.graph.devicePlatformType",
     "platform":  "windows10AndLater",
     "rule":  "(device.manufacturer -startsWith \"Parallels\") or (device.manufacturer -startsWith \"VMware\") or (device.model -eq \"Virtual Machine\") or (device.model -eq \"VirtualBox\")",

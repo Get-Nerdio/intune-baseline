@@ -9,7 +9,7 @@
     "lastModifiedDateTime@odata.type":  "#DateTimeOffset",
     "lastModifiedDateTime":  "2025-09-07T11:28:48.7863543Z",
     "displayName":  "Windows-Avd-MultiSession",
-    "description":  "Virtual machines running Windows 10/11 multi-session on Azure Virtual Desktop",
+    "description":  "Filter for Virtual machines running Windows 10/11 multi-session on Azure Virtual Desktop",
     "platform@odata.type":  "#microsoft.graph.devicePlatformType",
     "platform":  "windows10AndLater",
     "rule":  "(device.operatingSystemSKU -eq \"ServerRdsh\")",

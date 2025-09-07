@@ -4,11 +4,11 @@
 
 | Name | Description |
 | ---- | ----------- |
-| Windows-Avd-MultiSession | Virtual machines running Windows 10/11 multi-session on Azure Virtual Desktop |
-| Windows-Avd-SingleSession | Azure Virtual Desktop single session machines |
-| Windows-EnterpriseEducation | Windows 10/11 Enterprise or Education edition |
-| Windows-VirtualMachines | Microsoft Hyper-V, VMware Workstation / Fusion, Parallels Desktop, Oracle VirtualBox |
-| Windows-Windows365 |  |
+| Windows-Avd-MultiSession | Filter for Virtual machines running Windows 10/11 multi-session on Azure Virtual Desktop |
+| Windows-Avd-SingleSession | Filter for Azure Virtual Desktop single session machines |
+| Windows-EnterpriseEducation | Filter for Windows 10/11 Enterprise or Education edition |
+| Windows-VirtualMachines | Filter for Microsoft Hyper-V, VMware Workstation / Fusion, Parallels Desktop, Oracle VirtualBox |
+| Windows-Windows365 | Filter for Windows 365 Cloud PCs |
 | Prod-Windows-AllDevice-CompliancePolicy | User-based Windows compliance policy that applies to all default scenarios including Windows PCs, Windows 365, and AVD single session. |
 | Prod-Windows-AzureVirtualDesktop-CompliancePolicy | Device-based Windows compliance policy that applies to Azure Virtual Desktop multi-session - assign to All Devices with a filter that includes AVD multi-session hosts or an Entra ID group that targets those session hosts. |
 | Prod-Windows-BitLocker | Windows BitLocker settings to enable encryption for fixed drives with the default AES 128 bit XTS encryption, enable encryption for standard users and backup of the key to Azure AD. Assign to 'All Devices' |

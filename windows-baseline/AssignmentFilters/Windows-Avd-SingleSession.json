@@ -9,7 +9,7 @@
     "lastModifiedDateTime@odata.type":  "#DateTimeOffset",
     "lastModifiedDateTime":  "2025-09-07T11:28:36.802104Z",
     "displayName":  "Windows-Avd-SingleSession",
-    "description":  "Azure Virtual Desktop single session machines",
+    "description":  "Filter for Azure Virtual Desktop single session machines",
     "platform@odata.type":  "#microsoft.graph.devicePlatformType",
     "platform":  "windows10AndLater",
     "rule":  "(device.manufacturer -eq \"Microsoft Corporation\") and (device.model -eq \"Virtual Machine\") and (device.operatingSystemSKU -eq \"Enterprise\")",

@@ -9,7 +9,7 @@
     "lastModifiedDateTime@odata.type":  "#DateTimeOffset",
     "lastModifiedDateTime":  "2025-04-13T07:33:29.8260023Z",
     "displayName":  "Windows-Windows365",
-    "description":  "",
+    "description":  "Filter for Windows 365 Cloud PCs",
     "platform@odata.type":  "#microsoft.graph.devicePlatformType",
     "platform":  "windows10AndLater",
     "rule":  "(device.model -contains \"Cloud PC\")",

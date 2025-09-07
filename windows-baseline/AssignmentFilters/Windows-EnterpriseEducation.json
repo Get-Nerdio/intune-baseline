@@ -9,7 +9,7 @@
     "lastModifiedDateTime@odata.type":  "#DateTimeOffset",
     "lastModifiedDateTime":  "2022-11-02T12:09:22.4877248Z",
     "displayName":  "Windows-EnterpriseEducation",
-    "description":  "Windows 10/11 Enterprise or Education edition",
+    "description":  "Filter for Windows 10/11 Enterprise or Education edition",
     "platform@odata.type":  "#microsoft.graph.devicePlatformType",
     "platform":  "windows10AndLater",
     "rule":  "(device.operatingSystemSKU -in [\"Education\", \"EducationN\", \"Enterprise\", \"EnterpriseEval\", \"EnterpriseG\", \"EnterpriseGN\", \"EnterpriseS\", \"EnterpriseSEval\", \"EnterpriseSN\", \"EnterpriseN\", \"EnterpriseNEval\", \"ServerRdsh\"])",
