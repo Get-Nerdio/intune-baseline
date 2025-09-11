@@ -1,4 +1,4 @@
-$Tables = "./windows-baseline", "./windows-update", "./windows-extras", "./windows-asr"  | ForEach-Object {
+$Tables = "./windows-baseline", "./windows-update", "./windows-extras", "./windows-asr", "./macos" | ForEach-Object {
     $Path = $_
     New-MDHeader -Text $Path -Level 2
     "`n"

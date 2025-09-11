@@ -4,6 +4,7 @@
 
 | Name | Description |
 | ---- | ----------- |
+| Windows-Avd-AllSessionHosts | Filter for all Azure Virtual Desktop session hosts - single session and multi-session |
 | Windows-Avd-MultiSession | Filter for Virtual machines running Windows 10/11 multi-session on Azure Virtual Desktop |
 | Windows-Avd-SingleSession | Filter for Azure Virtual Desktop single session machines |
 | Windows-EnterpriseEducation | Filter for Windows 10/11 Enterprise or Education edition |
@@ -18,7 +19,7 @@
 | Prod-Windows-EnableCredentialGuard-Device | Enable Hypervisor Code Protected Integrity and Credential Guard without UEFI lock for safe approach to this security setting. Use this policy as a baseline and when no other policies are managing this setting.Apply to All Devices / filters or device groups. Enabling Credential Guard for Entra ID joined AVD session hosts using storage account access to authenticate a a storage account will break that authentication. |
 | Prod-Windows-EnableSmartScreenPhishingProtection-Device | Microsoft Defender SmartScreen settings for Windows Explorer (Windows 10, Windows 11), and Phishing Protection in Windows 11.Apply to All Devices / filters or device groups. |
 | Prod-Windows-EnableStorageSense-Device | Storage Sense settings to clear disk space including OneDrive and Downloads folders. Note - this will remove files from Downloads and Recycle Bin.Apply to All Devices / filters or device groups. |
-| Prod-Windows-GoogleChrome-Device | Baseline application policy settings for Google Chrome. This policy will lockdown Chrome, including preventing signing into the browser with a Google account.Apply to All Devices / filters or device groups. |
+| Prod-Windows-GoogleChrome-Device | Baseline application policy settings for Google Chrome. This policy will lockdown Chrome, including preventing signing into the browser with a Google account. Apply to All Devices (optionally with filters) or Entra ID device groups. |
 | Prod-Windows-GoogleChrome-Extensions-Device | Configures extension settings in Google Chrome - prevents users from adding extensions, and configures a list of force installed extensions. Apply to All Devices / filters or device groups. |
 | Prod-Windows-Microsoft365Apps-Device | Configure Microsoft 365 Apps settings - validate channel. Assumes a single Microsoft 365 Apps package has been deployed, incluing Project and Visio. Enables viewer mode so that users without licenses can use the Microsoft 365 Apps in viewer mode.Apply to All Devices / filters or device groups. |
 | Prod-Windows-Microsoft365Apps-User | Configure user targeted policy settings for the Microsoft 365 Apps. Apply to All Users / filters or user groups. |
@@ -116,3 +117,13 @@
 | ---- | ----------- |
 | 0_Prod-Windows-ASR-AllAudit-Device | All Attack Surface Reduction rules in Audit mode. https://learn.microsoft.com/en-us/defender-endpoint/attack-surface-reduction-rules-reference. Apply to All Devices (optionally with filters) or Entra ID device groups. |
 | 1_Prod-Windows-ASR-StandardBlock-Device | Standard Protection Attack Surface Reduction rules in Block mode, with all other ASR rules in Audit mode. https://learn.microsoft.com/en-us/defender-endpoint/attack-surface-reduction-rules-reference. Apply to All Devices (optionally with filters) or Entra ID device groups. |
+
+## ./macos
+
+| Name | Description |
+| ---- | ----------- |
+| Prod-macOS-CompliancePolicy | Compliance policy for all macOS devices. Apply by default to All Users. Note - changing the device password requirements will force a password change on all existing devices that have received this policy |
+| Prod-macOS-EntraIDSingleSignOn-Device | Enable Entra ID single sign-on |
+| Prod-macOS-MicrosoftEdge-Custom-Device | Microsoft Edge preferences file for default settings and settings not available in the Settings Catalog. |
+| Prod-macOS-MicrosoftEdge-Device | Baseline Microsoft Edge settings - enforce SmartScreen, sync, basic browser settings. Apply to All Devices (optionally with filters) or Entra ID device groups. |
+| Prod-macOS-MicrosoftEdge-Extensions-Device | Configures extension settings in Microsoft Edge - prevents users from adding extensions, and configures a list of force installed extensions. Adds: Microsoft Editor, uBlock Origin, My Apps Secure Sign-in Extension. Also enables the Edge sidebar & Copilot default extensions. Apply to All Devices (optionally with filters) or Entra ID device groups. |
