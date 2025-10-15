@@ -1,0 +1,63 @@
+name: Update POLICIES.md
+
+on:
+    workflow_dispatch:
+    push:
+        branches:
+            - main
+        paths:
+            - 'windows/**'
+            - 'macos/**'
+
+jobs:
+    release:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
+
+            - name: Install MarkdownPS
+              shell: pwsh
+              run: |
+                Install-PSRepository -Name "MarkdownPS" -TrustRepository -Scope "CurrentUser" -ErrorAction "Stop"
+
+            - name: Update POLICIES.md
+              shell: pwsh
+              run: |
+                $Tables = "$env:GITHUB_WORKSPACE/windows", "$env:GITHUB_WORKSPACE/macos" | ForEach-Object {
+                    $Path = $_
+                    New-MDHeader -Text ($Path -replace "$env:GITHUB_WORKSPACE/", "") -Level 2
+                    "`n"
+                    Get-ChildItem -Path $Path -Directory | ForEach-Object {
+                        $Dir = $_
+                        New-MDHeader -Text $Dir.Name -Level 3
+                        "`n"
+                        Get-ChildItem -Path $Dir -Recurse -Include "*.json" | ForEach-Object { 
+                            $File = $_
+                            $Props = Get-Content -Path $File.FullName -ErrorAction "SilentlyContinue" | ConvertFrom-Json | Select-Object -Property "name", "displayName", "description"
+                            if ($null -ne $Props.description) {
+                                [PSCustomObject] @{
+                                    Name        = $(if ($null -eq $Props.name) { $Props.displayName } else { $Props.name })
+                                    Description = $Props.description
+                                }
+                            }
+                        } | New-MDTable -Shrink
+                        "`n"
+                    }
+                }
+                # $Tables = $Tables -replace "^\s+$", "" # "^(\s+)(?=[|#]|$)", ""
+
+                $Content = @"
+                # Policies
+
+                $Tables
+                "@
+                $Content | Set-Content -Path "$env:GITHUB_WORKSPACE/POLICIES.md"
+
+            - name: Commit changes
+              id: commit
+              uses: stefanzweifel/git-auto-commit-action@v7
+              with:
+                commit_message: "Update POLICIES.md"
+                commit_user_name: "github-actions"
+                commit_user_email: "github-actions@users.noreply.github.com"
