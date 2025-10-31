@@ -1,0 +1,12 @@
+{
+    "displayName": "Prod-Win-Updates-Hotpatch",
+    "description": "What is Hotpatch\nHotpatch updates are Monthly B release security updates that can be installed without requiring you to restart the device. Hotpatch updates are designed to reduce downtime and disruptions. By minimizing the need to restart, these updates help ensure faster compliance, making it easier for organizations to maintain security while keeping workflows uninterrupted.\n\nThe key benefits are:\n\nHotpatch updates streamline the installation process and enhance compliance efficiency.\nNo changes are required to your existing update ring configurations. Your existing ring configurations are honored alongside Hotpatch policies.\nThe Hotpatch quality update report provides a per policy level view of the current update statuses for all devices that receive Hotpatch updates.\n \n\nEiligible devices:\n\nOperating System: Devices must be running Windows 11 24H2 or later.\nVBS (Virtualization-based security): VBS must be enabled to ensure secure installation of Hotpatch updates.\nLatest Baseline Release: Devices must be on the latest baseline release version to qualify for Hotpatch updates. Microsoft releases Baseline updates quarterly as standard cumulative updates.\n \n\nRelease cycles:\n\nBaseline Release Months: January, April, July, October.\n",
+    "createdDateTime": null,
+    "lastModifiedDateTime": null,
+    "roleScopeTagIds": null,
+    "assignments": null,
+    "hotpatchEnabled": true,
+    "id": null,
+    "@odata.type": null,
+    "approvalSettings": []
+}
