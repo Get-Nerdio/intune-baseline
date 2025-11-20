@@ -19,7 +19,7 @@ jobs:
             - name: Install MarkdownPS
               shell: pwsh
               run: |
-                Install-PSRepository -Name "MarkdownPS" -TrustRepository -Scope "CurrentUser" -ErrorAction "Stop"
+                Install-PSResource -Name "MarkdownPS" -TrustRepository -Scope "CurrentUser" -ErrorAction "Stop"
 
             - name: Update POLICIES.md
               shell: pwsh
