@@ -35,20 +35,20 @@ jobs:
               if os.path.exists(directory):
                   for json_file in Path(directory).rglob('*.json'):
                       try:
-                          # Try UTF-8 first, then UTF-16 LE
+                          # Try multiple encodings: UTF-8, UTF-8 with BOM, UTF-16 LE
                           data = None
-                          for encoding in ['utf-8', 'utf-16-le']:
+                          for encoding in ['utf-8', 'utf-8-sig', 'utf-16-le']:
                               try:
                                   with open(json_file, 'r', encoding=encoding) as f:
                                       data = json.load(f)
                                   break
-                              except (UnicodeDecodeError, UnicodeError):
+                              except (UnicodeDecodeError, UnicodeError, json.JSONDecodeError):
                                   continue
                           
                           if data is None:
                               failed_files.append({
                                   'file': str(json_file),
-                                  'reason': 'Unable to decode file (not UTF-8 or UTF-16 LE)'
+                                  'reason': 'Unable to decode file (not UTF-8, UTF-8-BOM, or UTF-16 LE)'
                               })
                               continue
                           
@@ -97,8 +97,27 @@ jobs:
                   print(f"  • {item['file']}")
                   print(f"    Reason: {item['reason']}\n")
               
+              # Write to GitHub job summary
+              summary_file = os.environ.get('GITHUB_STEP_SUMMARY')
+              if summary_file:
+                  with open(summary_file, 'a') as f:
+                      f.write("## ❌ JSON Validation Failed\n\n")
+                      f.write(f"**{len(failed_files)} file(s) failed validation:**\n\n")
+                      f.write("| File | Reason |\n")
+                      f.write("|------|--------|\n")
+                      for item in failed_files:
+                          f.write(f"| `{item['file']}` | {item['reason']} |\n")
+              
               exit(1)
           else:
               print("✅ All JSON files passed validation!")
+              
+              # Write success to GitHub job summary
+              summary_file = os.environ.get('GITHUB_STEP_SUMMARY')
+              if summary_file:
+                  with open(summary_file, 'a') as f:
+                      f.write("## ✅ JSON Validation Passed\n\n")
+                      f.write("All JSON files in `windows/` and `macos/` directories passed validation.\n")
+              
               exit(0)
           EOF
