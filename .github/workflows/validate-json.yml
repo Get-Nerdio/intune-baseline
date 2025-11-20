@@ -15,109 +15,108 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
       
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-      
       - name: Validate JSON files
         id: validate
+        shell: pwsh
         run: |
-          python3 << 'EOF'
-          import json
-          import os
-          from pathlib import Path
-          
-          failed_files = []
+          $failedFiles = @()
           
           # Find all JSON files in windows and macos directories
-          for directory in ['windows', 'macos']:
-              if os.path.exists(directory):
-                  for json_file in Path(directory).rglob('*.json'):
-                      try:
-                          # Try multiple encodings: UTF-8, UTF-8 with BOM, UTF-16 LE
-                          data = None
-                          for encoding in ['utf-8', 'utf-8-sig', 'utf-16-le']:
-                              try:
-                                  with open(json_file, 'r', encoding=encoding) as f:
-                                      data = json.load(f)
-                                  break
-                              except (UnicodeDecodeError, UnicodeError, json.JSONDecodeError):
-                                  continue
-                          
-                          if data is None:
-                              failed_files.append({
-                                  'file': str(json_file),
-                                  'reason': 'Unable to decode file (not UTF-8, UTF-8-BOM, or UTF-16 LE)'
-                              })
-                              continue
-                          
-                          # Check if description property exists
-                          if 'description' in data:
-                              description = data['description']
-                              
-                              # Check if description is null
-                              if description is None:
-                                  failed_files.append({
-                                      'file': str(json_file),
-                                      'reason': 'description is null'
-                                  })
-                                  continue
-                              
-                              # Check if description contains carriage returns or line feeds
-                              if isinstance(description, str):
-                                  if '\r' in description or '\n' in description:
-                                      failed_files.append({
-                                          'file': str(json_file),
-                                          'reason': 'description contains CR/LF characters'
-                                      })
-                          else:
-                              # Description property doesn't exist
-                              failed_files.append({
-                                  'file': str(json_file),
-                                  'reason': 'description property is missing'
-                              })
-                      
-                      except json.JSONDecodeError as e:
-                          failed_files.append({
-                              'file': str(json_file),
-                              'reason': f'Invalid JSON: {str(e)}'
-                          })
-                      except Exception as e:
-                          failed_files.append({
-                              'file': str(json_file),
-                              'reason': f'Error reading file: {str(e)}'
-                          })
+          $jsonFiles = @()
+          if (Test-Path 'windows') {
+              $jsonFiles += Get-ChildItem -Path 'windows' -Filter '*.json' -Recurse
+          }
+          if (Test-Path 'macos') {
+              $jsonFiles += Get-ChildItem -Path 'macos' -Filter '*.json' -Recurse
+          }
+          
+          foreach ($jsonFile in $jsonFiles) {
+              $data = $null
+              $loaded = $false
+              
+              # Try multiple encodings: UTF-8, UTF-8 with BOM, UTF-16 LE
+              foreach ($encoding in @([System.Text.Encoding]::UTF8, [System.Text.Encoding]::UTF8, [System.Text.Encoding]::Unicode)) {
+                  try {
+                      $content = Get-Content -Path $jsonFile.FullName -Encoding $encoding.WebName -Raw -ErrorAction Stop
+                      $data = $content | ConvertFrom-Json -ErrorAction Stop
+                      $loaded = $true
+                      break
+                  }
+                  catch {
+                      continue
+                  }
+              }
+              
+              if (-not $loaded) {
+                  $failedFiles += [PSCustomObject]@{
+                      File = $jsonFile.FullName.Replace($PWD, '.').Replace('\', '/')
+                      Reason = 'Unable to decode file (not UTF-8, UTF-8-BOM, or UTF-16 LE)'
+                  }
+                  continue
+              }
+              
+              # Check if description property exists
+              if ($null -eq $data.PSObject.Properties['description']) {
+                  $failedFiles += [PSCustomObject]@{
+                      File = $jsonFile.FullName.Replace($PWD, '.').Replace('\', '/')
+                      Reason = 'description property is missing'
+                  }
+              }
+              else {
+                  $description = $data.description
+                  
+                  # Check if description is null
+                  if ($null -eq $description) {
+                      $failedFiles += [PSCustomObject]@{
+                          File = $jsonFile.FullName.Replace($PWD, '.').Replace('\', '/')
+                          Reason = 'description is null'
+                      }
+                  }
+                  # Check if description contains carriage returns or line feeds
+                  elseif ($description -is [string] -and ($description -match "`r" -or $description -match "`n")) {
+                      $failedFiles += [PSCustomObject]@{
+                          File = $jsonFile.FullName.Replace($PWD, '.').Replace('\', '/')
+                          Reason = 'description contains CR/LF characters'
+                      }
+                  }
+              }
+          }
           
           # Output results
-          if failed_files:
-              print("❌ JSON Validation Failed")
-              print("\nThe following files failed validation:\n")
-              for item in failed_files:
-                  print(f"  • {item['file']}")
-                  print(f"    Reason: {item['reason']}\n")
+          if ($failedFiles.Count -gt 0) {
+              Write-Host "❌ JSON Validation Failed"
+              Write-Host ""
+              Write-Host "The following files failed validation:"
+              Write-Host ""
+              foreach ($item in $failedFiles) {
+                  Write-Host " • $($item.File)"
+                  Write-Host "   Reason: $($item.Reason)"
+                  Write-Host ""
+              }
               
               # Write to GitHub job summary
-              summary_file = os.environ.get('GITHUB_STEP_SUMMARY')
-              if summary_file:
-                  with open(summary_file, 'a') as f:
-                      f.write("## ❌ JSON Validation Failed\n\n")
-                      f.write(f"**{len(failed_files)} file(s) failed validation:**\n\n")
-                      f.write("| File | Reason |\n")
-                      f.write("|------|--------|\n")
-                      for item in failed_files:
-                          f.write(f"| `{item['file']}` | {item['reason']} |\n")
+              if ($env:GITHUB_STEP_SUMMARY) {
+                  "## ❌ JSON Validation Failed" | Out-File -FilePath $env:GITHUB_STEP_SUMMARY -Append
+                  "" | Out-File -FilePath $env:GITHUB_STEP_SUMMARY -Append
+                  "**$($failedFiles.Count) file(s) failed validation:**" | Out-File -FilePath $env:GITHUB_STEP_SUMMARY -Append
+                  "" | Out-File -FilePath $env:GITHUB_STEP_SUMMARY -Append
+                  "| File | Reason |" | Out-File -FilePath $env:GITHUB_STEP_SUMMARY -Append
+                  "|------|--------|" | Out-File -FilePath $env:GITHUB_STEP_SUMMARY -Append
+                  foreach ($item in $failedFiles) {
+                      "| ``$($item.File)`` | $($item.Reason) |" | Out-File -FilePath $env:GITHUB_STEP_SUMMARY -Append
+                  }
+              }
               
-              exit(1)
-          else:
-              print("✅ All JSON files passed validation!")
+              exit 1
+          }
+          else {
+              Write-Host "✅ All JSON files passed validation!"
               
               # Write success to GitHub job summary
-              summary_file = os.environ.get('GITHUB_STEP_SUMMARY')
-              if summary_file:
-                  with open(summary_file, 'a') as f:
-                      f.write("## ✅ JSON Validation Passed\n\n")
-                      f.write("All JSON files in `windows/` and `macos/` directories passed validation.\n")
-              
-              exit(0)
-          EOF
+              if ($env:GITHUB_STEP_SUMMARY) {
+                  "## ✅ JSON Validation Passed" | Out-File -FilePath $env:GITHUB_STEP_SUMMARY -Append
+                  "" | Out-File -FilePath $env:GITHUB_STEP_SUMMARY -Append
+                  "All JSON files in ``windows/`` and ``macos/`` directories passed validation." | Out-File -FilePath $env:GITHUB_STEP_SUMMARY -Append
+              }
+              exit 0
+          }
