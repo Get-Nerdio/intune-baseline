@@ -1,0 +1,90 @@
+name: Validate policy files
+
+on:
+    workflow_dispatch:
+    pull_request:
+        paths:
+        - 'windows/**/*.json'
+        - 'macos/**/*.json'
+
+jobs:
+  validate-json:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Validate JSON files
+        id: validate
+        run: |
+          python3 << 'EOF'
+          import json
+          import os
+          from pathlib import Path
+          
+          failed_files = []
+          
+          # Find all JSON files in windows and macos directories
+          for directory in ['windows', 'macos']:
+              if os.path.exists(directory):
+                  for json_file in Path(directory).rglob('*.json'):
+                      try:
+                          with open(json_file, 'r', encoding='utf-8') as f:
+                              data = json.load(f)
+                          
+                          # Check if description property exists
+                          if 'description' in data:
+                              description = data['description']
+                              
+                              # Check if description is null
+                              if description is None:
+                                  failed_files.append({
+                                      'file': str(json_file),
+                                      'reason': 'description is null'
+                                  })
+                                  continue
+                              
+                              # Check if description contains carriage returns or line feeds
+                              if isinstance(description, str):
+                                  if '\r' in description or '\n' in description:
+                                      failed_files.append({
+                                          'file': str(json_file),
+                                          'reason': 'description contains CR/LF characters'
+                                      })
+                          else:
+                              # Description property doesn't exist
+                              failed_files.append({
+                                  'file': str(json_file),
+                                  'reason': 'description property is missing'
+                              })
+                      
+                      except json.JSONDecodeError as e:
+                          failed_files.append({
+                              'file': str(json_file),
+                              'reason': f'Invalid JSON: {str(e)}'
+                          })
+                      except Exception as e:
+                          failed_files.append({
+                              'file': str(json_file),
+                              'reason': f'Error reading file: {str(e)}'
+                          })
+          
+          # Output results
+          if failed_files:
+              print("❌ JSON Validation Failed")
+              print("\nThe following files failed validation:\n")
+              for item in failed_files:
+                  print(f"  • {item['file']}")
+                  print(f"    Reason: {item['reason']}\n")
+              
+              exit(1)
+          else:
+              print("✅ All JSON files passed validation!")
+              exit(0)
+          EOF
