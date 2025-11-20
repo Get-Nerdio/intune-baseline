@@ -40,7 +40,7 @@ jobs:
                                 }
                             }
                         } | New-MDTable -Shrink
-                        $Content | Set-Content -Path "$($SubDir.FullName)/POLICIES.md"
+                        $Content | Set-Content -Path "$($SubDir.FullName)/README.md"
                     }
                 }
 
