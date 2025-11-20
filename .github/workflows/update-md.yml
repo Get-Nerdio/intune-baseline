@@ -1,4 +1,4 @@
-name: Update POLICIES.md
+name: Update markdown files
 
 on:
     workflow_dispatch:
@@ -24,15 +24,13 @@ jobs:
             - name: Update POLICIES.md
               shell: pwsh
               run: |
-                $Tables = "$env:GITHUB_WORKSPACE/windows", "$env:GITHUB_WORKSPACE/macos" | ForEach-Object {
-                    $Path = $_
-                    New-MDHeader -Text ($Path -replace "$env:GITHUB_WORKSPACE/", "") -Level 2
-                    "`n"
-                    Get-ChildItem -Path $Path -Directory | ForEach-Object {
-                        $Dir = $_
-                        New-MDHeader -Text $Dir.Name -Level 3
-                        "`n"
-                        Get-ChildItem -Path $Dir -Recurse -Include "*.json" | ForEach-Object { 
+                "$env:GITHUB_WORKSPACE/windows", "$env:GITHUB_WORKSPACE/macos" | ForEach-Object {
+                    $Parent = $_
+                    Get-ChildItem -Path $Parent -Directory | ForEach-Object {
+                        $SubDir = $_
+                        $Content = New-MDHeader -Text $SubDir.Name -Level 1
+                        $Content += "`n"
+                        $Content += Get-ChildItem -Path $SubDir.FullName -Recurse -Include "*.json" | ForEach-Object { 
                             $File = $_
                             $Props = Get-Content -Path $File.FullName -ErrorAction "SilentlyContinue" | ConvertFrom-Json | Select-Object -Property "name", "displayName", "description"
                             if ($null -ne $Props.description) {
@@ -42,17 +40,9 @@ jobs:
                                 }
                             }
                         } | New-MDTable -Shrink
-                        "`n"
+                        $Content | Set-Content -Path "$($SubDir.FullName)/POLICIES.md"
                     }
                 }
-                # $Tables = $Tables -replace "^\s+$", "" # "^(\s+)(?=[|#]|$)", ""
-
-                $Content = @"
-                # Policies
-
-                $Tables
-                "@
-                $Content | Set-Content -Path "$env:GITHUB_WORKSPACE/POLICIES.md"
 
             - name: Commit changes
               id: commit
