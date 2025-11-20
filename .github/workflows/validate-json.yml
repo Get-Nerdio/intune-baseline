@@ -35,8 +35,22 @@ jobs:
               if os.path.exists(directory):
                   for json_file in Path(directory).rglob('*.json'):
                       try:
-                          with open(json_file, 'r', encoding='utf-8') as f:
-                              data = json.load(f)
+                          # Try UTF-8 first, then UTF-16 LE
+                          data = None
+                          for encoding in ['utf-8', 'utf-16-le']:
+                              try:
+                                  with open(json_file, 'r', encoding=encoding) as f:
+                                      data = json.load(f)
+                                  break
+                              except (UnicodeDecodeError, UnicodeError):
+                                  continue
+                          
+                          if data is None:
+                              failed_files.append({
+                                  'file': str(json_file),
+                                  'reason': 'Unable to decode file (not UTF-8 or UTF-16 LE)'
+                              })
+                              continue
                           
                           # Check if description property exists
                           if 'description' in data:
