@@ -1,8 +1,8 @@
 # Configure diff support for JSON
-/windows-asr/**/* diff working-tree-encoding=UTF-16LE-BOM eol=CRLF
-/windows-baseline/**/* diff working-tree-encoding=UTF-16LE-BOM eol=CRLF
-/windows-extras/**/* diff working-tree-encoding=UTF-16LE-BOM eol=CRLF
-/windows-update/**/* diff working-tree-encoding=UTF-16LE-BOM eol=CRLF
+# /windows-asr/**/* diff working-tree-encoding=UTF-16LE-BOM eol=CRLF
+# /windows-baseline/**/* diff working-tree-encoding=UTF-16LE-BOM eol=CRLF
+# /windows-extras/**/* diff working-tree-encoding=UTF-16LE-BOM eol=CRLF
+# /windows-update/**/* diff working-tree-encoding=UTF-16LE-BOM eol=CRLF
 
 # Auto detect text files and perform LF normalization
 *   text=auto
