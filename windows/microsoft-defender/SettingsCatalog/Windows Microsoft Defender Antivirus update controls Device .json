@@ -9,7 +9,7 @@
     "description":  "Configures Microsoft Defender update channels. Apply to All Devices (optionally with filters) or Entra ID device groups.",
     "lastModifiedDateTime@odata.type":  "#DateTimeOffset",
     "lastModifiedDateTime":  "2025-06-11T08:48:03.4845431Z",
-    "name":  "Prod-Windows-MicrosoftDefenderUpdateControls-Device",
+    "name":  "Windows Microsoft Defender Antivirus update controls Device ",
     "platforms@odata.type":  "#microsoft.graph.deviceManagementConfigurationPlatforms",
     "platforms":  "windows10",
     "priorityMetaData":  null,

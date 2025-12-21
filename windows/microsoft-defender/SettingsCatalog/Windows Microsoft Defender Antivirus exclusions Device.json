@@ -9,7 +9,7 @@
     "description":  "Folder path exclusions to support Intune clients. Exclusions may need to be updated in MDE as well. Apply to All Devices (optionally with filters) or Entra ID device groups.",
     "lastModifiedDateTime@odata.type":  "#DateTimeOffset",
     "lastModifiedDateTime":  "2025-09-14T07:14:56.7734002Z",
-    "name":  "Prod-Windows-MicrosoftDefenderExclusions-Baseline-Device",
+    "name":  "Windows Microsoft Defender Antivirus exclusions Device",
     "platforms@odata.type":  "#microsoft.graph.deviceManagementConfigurationPlatforms",
     "platforms":  "windows10",
     "priorityMetaData":  null,
