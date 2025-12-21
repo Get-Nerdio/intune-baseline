@@ -2,9 +2,9 @@
     "@odata.context": "https://graph.microsoft.com/beta/$metadata#deviceManagement/configurationPolicies/$entity",
     "createdDateTime": "2025-03-06T03:09:28.4690479Z",
     "creationSource": null,
-    "description": "Puts all rules into block mode - this includes 'Block execution of potentially obfuscated scripts' which affects AVD session hosts. https://learn.microsoft.com/en-us/defender-endpoint/attack-surface-reduction-rules-reference. Apply to All Devices (optionally with filters) or Entra ID device groups.",
+    "description": "Places all Attack Surface Reduction rules into block mode - this includes 'Block execution of potentially obfuscated scripts' which affects AVD session hosts. https://learn.microsoft.com/en-us/defender-endpoint/attack-surface-reduction-rules-reference. Apply to All Devices (optionally with filters) or Entra ID device groups, ensuring this excludes AVD and W365 hosts.",
     "lastModifiedDateTime": "2025-09-09T04:24:39.3821847Z",
-    "name": "2_Prod-Windows-ASR-AllBlock-Device",
+    "name": "Windows Attack Surface Reduction All Rules Block mode",
     "platforms": "windows10",
     "priorityMetaData": null,
     "roleScopeTagIds": [
