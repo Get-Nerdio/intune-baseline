@@ -9,7 +9,7 @@
     "description":  "Cloned policy from CIS (L1) Admin Templates - System - Windows 11 Intune 3.0.0",
     "lastModifiedDateTime@odata.type":  "#DateTimeOffset",
     "lastModifiedDateTime":  "2025-08-06T22:40:36.6553295Z",
-    "name":  "GoLive - CIS (L1) Admin Templates - System - Windows 11 Intune 3.0.0",
+    "name":  "Windows CIS L1 - 3.0.0 - Admin Templates - System",
     "platforms@odata.type":  "#microsoft.graph.deviceManagementConfigurationPlatforms",
     "platforms":  "windows10",
     "priorityMetaData":  null,

@@ -9,7 +9,7 @@
     "description":  "Cloned policy from CIS (L1) Device Lock \u0026 WHFB - Windows 11 Intune 3.0.0",
     "lastModifiedDateTime@odata.type":  "#DateTimeOffset",
     "lastModifiedDateTime":  "2025-08-06T22:40:38.5939998Z",
-    "name":  "GoLive - CIS (L1) Device Lock \u0026 WHFB - Windows 11 Intune 3.0.0",
+    "name":  "Windows CIS L1 - 3.0.0 - Device Lock & WHFB",
     "platforms@odata.type":  "#microsoft.graph.deviceManagementConfigurationPlatforms",
     "platforms":  "windows10",
     "priorityMetaData":  null,

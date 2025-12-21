@@ -9,7 +9,7 @@
     "description":  "Cloned policy from CIS (L1) User Rights - Windows 11 Intune 3.0.0",
     "lastModifiedDateTime@odata.type":  "#DateTimeOffset",
     "lastModifiedDateTime":  "2025-06-20T15:27:05.8412699Z",
-    "name":  "GoLive - CIS (L1) User Rights - Windows 11 Intune 3.0.0",
+    "name":  "Windows CIS L1 - 3.0.0 - User Rights",
     "platforms@odata.type":  "#microsoft.graph.deviceManagementConfigurationPlatforms",
     "platforms":  "windows10",
     "priorityMetaData":  null,

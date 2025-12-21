@@ -9,7 +9,7 @@
     "description":  "Cloned policy from CIS (L1) Firewall - Windows 11 Intune 3.0.0",
     "lastModifiedDateTime@odata.type":  "#DateTimeOffset",
     "lastModifiedDateTime":  "2025-08-06T22:40:39.2326404Z",
-    "name":  "GoLive - CIS (L1) Firewall - Windows 11 Intune 3.0.0",
+    "name":  "Windows CIS L1 - 3.0.0 - Firewall",
     "platforms@odata.type":  "#microsoft.graph.deviceManagementConfigurationPlatforms",
     "platforms":  "windows10",
     "priorityMetaData":  null,

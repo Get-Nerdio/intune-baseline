@@ -9,7 +9,7 @@
     "description":  "Cloned policy from CIS (L1) Defender - Windows 11 Intune 3.0.0",
     "lastModifiedDateTime@odata.type":  "#DateTimeOffset",
     "lastModifiedDateTime":  "2025-06-20T15:23:44.9838584Z",
-    "name":  "GoLive - CIS (L1) Defender - Windows 11 Intune 3.0.0",
+    "name":  "Windows CIS L1 - 3.0.0 - Defender",
     "platforms@odata.type":  "#microsoft.graph.deviceManagementConfigurationPlatforms",
     "platforms":  "windows10",
     "priorityMetaData":  null,
