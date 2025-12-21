@@ -16,7 +16,7 @@
     "deviceManagementApplicabilityRuleDeviceMode":  null,
     "createdDateTime@odata.type":  "#DateTimeOffset",
     "createdDateTime":  "2025-09-30T16:27:05.8566585Z",
-    "description":  null,
+    "description":  "Enables the Microsoft Defender for Endpoint network filter on macOS devices to allow monitoring and controlling of network traffic for threat detection and prevention.",
     "displayName":  "[macOS][MDE] 2. Network Filter",
     "version":  2,
     "payloadName":  "MacOS Network Filter",
