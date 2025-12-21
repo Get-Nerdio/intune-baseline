@@ -14,7 +14,7 @@
     "description": "Compliance policy for Windows 365 Cloud PCs (for feature that are not supported, e.g. BitLocker). Target All Devices with a filter that includes \u0027Windows-Windows365\u0027.",
     "lastModifiedDateTime@odata.type": "#DateTimeOffset",
     "lastModifiedDateTime": "2025-09-09T08:56:05.7830397Z",
-    "displayName": "Prod-Windows-Windows365-CompliancePolicy",
+    "displayName": "Windows Windows 365 Compliance Policy Device",
     "version": 4,
     "passwordRequired": false,
     "passwordBlockSimple": false,

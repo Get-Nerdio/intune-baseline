@@ -9,7 +9,7 @@
     "description": "Baseline Microsoft Edge settings - enforce SmartScreen, sync, basic browser settings. Apply to All Devices (optionally with filters) or Entra ID device groups.",
     "lastModifiedDateTime@odata.type": "#DateTimeOffset",
     "lastModifiedDateTime": "2025-09-14T07:15:20.0763297Z",
-    "name": "Prod-Windows-MicrosoftEdge-Baseline-Device",
+    "name": "Windows Microsoft Edge All Devices baseline Device",
     "platforms@odata.type": "#microsoft.graph.deviceManagementConfigurationPlatforms",
     "platforms": "windows10",
     "priorityMetaData": null,

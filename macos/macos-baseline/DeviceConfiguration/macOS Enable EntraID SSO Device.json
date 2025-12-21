@@ -18,7 +18,7 @@
     "createdDateTime@odata.type": "#DateTimeOffset",
     "createdDateTime": "2025-03-06T03:09:58.8303267Z",
     "description": "Enable Entra ID single sign-on",
-    "displayName": "Prod-macOS-EntraIDSingleSignOn-Device",
+    "displayName": "macOS Enable EntraID SSO Device",
     "version": 3,
     "adminShowHostInfo": false,
     "loginWindowText": null,

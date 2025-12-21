@@ -9,7 +9,7 @@
     "description": "Configures extension settings in Microsoft Edge - prevents users from adding extensions, and configures a list of force installed extensions. Adds: Microsoft Editor, uBlock Origin, My Apps Secure Sign-in Extension. Also enables the Edge sidebar \u0026 Copilot default extensions. Apply to All Devices (optionally with filters) or Entra ID device groups.",
     "lastModifiedDateTime@odata.type": "#DateTimeOffset",
     "lastModifiedDateTime": "2025-06-11T23:27:34.7092571Z",
-    "name": "Prod-macOS-MicrosoftEdge-Extensions-Device",
+    "name": "macOS Microsoft Edge Extensions Device",
     "platforms@odata.type": "#microsoft.graph.deviceManagementConfigurationPlatforms",
     "platforms": "macOS",
     "priorityMetaData": null,

@@ -14,7 +14,7 @@
     "description": "Device-based Windows compliance policy that applies to Azure Virtual Desktop session hosts - assign to All Devices with a filter that includes \u0027Windows-Avd-AllSessionHosts\u0027",
     "lastModifiedDateTime@odata.type": "#DateTimeOffset",
     "lastModifiedDateTime": "2025-09-09T08:54:38.8639022Z",
-    "displayName": "Prod-Windows-AzureVirtualDesktop-CompliancePolicy",
+    "displayName": "Windows Azure Virtual Desktop Compliance Policy Device",
     "version": 7,
     "passwordRequired": false,
     "passwordBlockSimple": false,

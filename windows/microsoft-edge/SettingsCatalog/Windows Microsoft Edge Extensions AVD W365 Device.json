@@ -9,7 +9,7 @@
     "description": "Configures extension settings in Microsoft Edge - prevents users from adding extensions, and configures a list of force installed extensions. Adds: Microsoft Editor, uBlock Origin, My Apps Secure Sign-in Extension, Multimedia Redirection. Also enables the Edge sidebar \u0026 Copilot default extensions. Apply to All Devices (optionally with filters) or Entra ID device groups.",
     "lastModifiedDateTime@odata.type": "#DateTimeOffset",
     "lastModifiedDateTime": "2025-09-14T07:15:56.5614701Z",
-    "name": "Prod-Windows-MicrosoftEdge-Extensions-AVDW365-Baseline-Device",
+    "name": "Windows Microsoft Edge Extensions AVD W365 Device",
     "platforms@odata.type": "#microsoft.graph.deviceManagementConfigurationPlatforms",
     "platforms": "windows10",
     "priorityMetaData": null,

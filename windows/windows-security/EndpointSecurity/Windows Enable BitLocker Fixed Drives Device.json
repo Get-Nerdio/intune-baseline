@@ -4,7 +4,7 @@
     "@odata.id": "deviceManagement/intents(\u00279325aa9c-0bc3-43d2-a3dd-620642dc7054\u0027)",
     "@odata.editLink": "deviceManagement/intents(\u00279325aa9c-0bc3-43d2-a3dd-620642dc7054\u0027)",
     "id": "9325aa9c-0bc3-43d2-a3dd-620642dc7054",
-    "displayName": "Prod-Windows-BitLocker",
+    "displayName": "Windows Enable BitLocker Fixed Drives Device",
     "description": "Windows BitLocker settings to enable encryption for fixed drives with the default AES 128 bit XTS encryption, enable encryption for standard users and backup of the key to Entra ID. Apply to All Devices (optionally with filters) or Entra ID device groups.",
     "isAssigned": false,
     "isMigratingToConfigurationPolicy": null,

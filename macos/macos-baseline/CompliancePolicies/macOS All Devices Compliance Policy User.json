@@ -14,7 +14,7 @@
     "description": "Compliance policy for all macOS devices. Apply by default to All Users. Note - changing the device password requirements will force a password change on all existing devices that have received this policy",
     "lastModifiedDateTime@odata.type": "#DateTimeOffset",
     "lastModifiedDateTime": "2025-09-11T02:48:03.025285Z",
-    "displayName": "Prod-macOS-CompliancePolicy",
+    "displayName": "macOS All Devices Compliance Policy User",
     "version": 11,
     "passwordRequired": false,
     "passwordBlockSimple": false,

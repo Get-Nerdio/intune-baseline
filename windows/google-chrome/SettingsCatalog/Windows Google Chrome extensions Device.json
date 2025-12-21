@@ -9,7 +9,7 @@
     "description": "Configures extension settings in Google Chrome - prevents users from adding extensions, and configures a list of force installed extensions. Apply to All Devices (optionally with filters) or Entra ID device groups.",
     "lastModifiedDateTime@odata.type": "#DateTimeOffset",
     "lastModifiedDateTime": "2025-09-14T07:09:47.1932549Z",
-    "name": "Prod-Windows-GoogleChrome-Extensions-Baseline-Device",
+    "name": "Windows Google Chrome extensions Device",
     "platforms@odata.type": "#microsoft.graph.deviceManagementConfigurationPlatforms",
     "platforms": "windows10",
     "priorityMetaData": null,

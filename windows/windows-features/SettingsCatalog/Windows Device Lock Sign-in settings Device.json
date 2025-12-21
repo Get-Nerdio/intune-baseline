@@ -9,7 +9,7 @@
     "description": "Configurations for device lock and sign-in. Apply to All Devices with optional features, or copy to create settings to apply to different device types",
     "lastModifiedDateTime@odata.type": "#DateTimeOffset",
     "lastModifiedDateTime": "2025-09-17T01:10:58.6794586Z",
-    "name": "Prod-Windows-DeviceLockSignIn-Baseline-Device",
+    "name": "Windows Device Lock Sign-in settings Device",
     "platforms@odata.type": "#microsoft.graph.deviceManagementConfigurationPlatforms",
     "platforms": "windows10",
     "priorityMetaData": null,

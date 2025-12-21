@@ -9,7 +9,7 @@
     "description":  "Baseline Microsoft Edge settings - enforce SmartScreen, sync, basic browser settings. Apply to All Devices (optionally with filters) or Entra ID device groups.",
     "lastModifiedDateTime@odata.type":  "#DateTimeOffset",
     "lastModifiedDateTime":  "2025-06-11T08:27:52.2059877Z",
-    "name":  "Prod-macOS-MicrosoftEdge-Device",
+    "name":  "macOS Microsoft Edge All Devices baseline Device",
     "platforms@odata.type":  "#microsoft.graph.deviceManagementConfigurationPlatforms",
     "platforms":  "macOS",
     "priorityMetaData":  null,

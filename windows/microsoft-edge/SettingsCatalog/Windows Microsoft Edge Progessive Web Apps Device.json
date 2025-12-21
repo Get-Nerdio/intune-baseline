@@ -9,7 +9,7 @@
     "description": "Configure list of force-installed Microsoft 365 Progessive Web Apps that have no Store or Win32 application equivalent. Apply to All Users (optionally with filters) or Entra ID user groups.",
     "lastModifiedDateTime@odata.type": "#DateTimeOffset",
     "lastModifiedDateTime": "2025-06-15T23:25:43.6331632Z",
-    "name": "Prod-Windows-MicrosoftEdge-ProgressiveWebApps-User",
+    "name": "Windows Microsoft Edge Progessive Web Apps Device",
     "platforms@odata.type": "#microsoft.graph.deviceManagementConfigurationPlatforms",
     "platforms": "windows10",
     "priorityMetaData": null,

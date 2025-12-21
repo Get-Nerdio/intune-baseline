@@ -9,7 +9,7 @@
     "description": "Microsoft Defender SmartScreen settings for Windows Explorer (Windows 10, Windows 11), and Phishing Protection in Windows 11. Apply to All Devices (optionally with filters) or Entra ID device groups.",
     "lastModifiedDateTime@odata.type": "#DateTimeOffset",
     "lastModifiedDateTime": "2025-09-14T07:07:31.5131052Z",
-    "name": "Prod-Windows-SmartScreenPhishingProtection-Baseline-Device",
+    "name": "Windows Enable SmartScreen and Phishing Protection Device",
     "platforms@odata.type": "#microsoft.graph.deviceManagementConfigurationPlatforms",
     "platforms": "windows10",
     "priorityMetaData": null,

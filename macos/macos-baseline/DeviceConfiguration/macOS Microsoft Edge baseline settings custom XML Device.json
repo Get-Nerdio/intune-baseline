@@ -18,7 +18,7 @@
     "createdDateTime@odata.type": "#DateTimeOffset",
     "createdDateTime": "2025-06-11T03:29:32.9924297Z",
     "description": "Microsoft Edge preferences file for default settings and settings not available in the Settings Catalog.",
-    "displayName": "Prod-macOS-MicrosoftEdge-Custom-Device",
+    "displayName": "macOS Microsoft Edge baseline settings custom XML Device",
     "version": 4,
     "bundleId": "com.microsoft.edgemac",
     "fileName": "com.microsoft.Edge.plist",

@@ -9,7 +9,7 @@
     "description": "Remote Desktop settings to apply to Azure Virtual Desktop and Windows 365 devices. Apply to All Devices (optionally with filters) or Entra ID device groups.",
     "lastModifiedDateTime@odata.type": "#DateTimeOffset",
     "lastModifiedDateTime": "2025-09-14T07:04:40.413067Z",
-    "name": "Prod-Windows-AzureVirtualDesktop-RemoteDesktop-Baseline-Device",
+    "name": "Windows AVD W365 Remote Desktop Settings Device",
     "platforms@odata.type": "#microsoft.graph.deviceManagementConfigurationPlatforms",
     "platforms": "windows10",
     "priorityMetaData": null,

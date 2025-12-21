@@ -14,7 +14,7 @@
     "description": "User-based Windows compliance policy that applies to all default scenarios including physical Windows PCs.",
     "lastModifiedDateTime@odata.type": "#DateTimeOffset",
     "lastModifiedDateTime": "2025-09-09T08:53:31.5497687Z",
-    "displayName": "Prod-Windows-AllDevice-CompliancePolicy",
+    "displayName": "Windows Physical PCs Compliance Policy User",
     "version": 18,
     "passwordRequired": false,
     "passwordBlockSimple": false,
