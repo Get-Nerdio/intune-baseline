@@ -17,7 +17,7 @@
     "createdDateTime@odata.type":  "#DateTimeOffset",
     "createdDateTime":  "2025-09-30T16:29:23.9940411Z",
     "description":  "Configures Microsoft Defender for Endpoint full disk access on macOS devices to enhance security by allowing comprehensive threat detection and response capabilities.",
-    "displayName":  "[macOS][MDE] 3. Full Disk Access",
+    "displayName":  "macOS MDE 3. Full Disk Access Device",
     "version":  1,
     "payloadName":  "MacOS Full disk access",
     "payloadFileName":  "fulldisk.mobileconfig",

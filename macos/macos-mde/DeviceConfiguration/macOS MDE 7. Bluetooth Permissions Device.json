@@ -17,7 +17,7 @@
     "createdDateTime@odata.type":  "#DateTimeOffset",
     "createdDateTime":  "2025-09-30T16:36:21.3381894Z",
     "description":  "macOS 14 (Sonoma) contains new privacy enhancements. Beginning with this version, by default, applications can\u0027t access Bluetooth without explicit consent. Microsoft Defender for Endpoint uses it if you configure Bluetooth policies for Device Control.",
-    "displayName":  "[macOS][MDE] 7. Bluetooth Permissions",
+    "displayName":  "macOS MDE 7. Bluetooth Permissions Device",
     "version":  1,
     "payloadName":  "MacOS Bluetooth consent",
     "payloadFileName":  "bluetooth.mobileconfig",

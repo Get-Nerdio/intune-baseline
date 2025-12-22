@@ -17,7 +17,7 @@
     "createdDateTime@odata.type": "#DateTimeOffset",
     "createdDateTime": "2025-09-30T16:40:19.8699708Z",
     "description": "The sample com.microsoft.autoupdate2.mobileconfig is set to Current Channel (Production). This profile is used to update the Microsoft Defender for Endpoint on macOS via Microsoft AutoUpdate (MAU). If you\u0027re deploying Microsoft Defender for Endpoint on macOS, you have the options to get an updated version of the application (Platform Update) that are in the different channels mentioned here: Beta (Insiders-Fast). Current channel (Preview, Insiders-Slow). Current channel (Production). For more information, see Deploy updates for Microsoft Defender for Endpoint on macOS.",
-    "displayName": "[macOS][MDE] 8. Microsoft AutoUpdate",
+    "displayName": "macOS MDE 8. Microsoft AutoUpdate Device",
     "version": 1,
     "payloadName": "macOS Microsoft Auto-Update",
     "payloadFileName": "com.microsoft.autoupdate2.mobileconfig",
