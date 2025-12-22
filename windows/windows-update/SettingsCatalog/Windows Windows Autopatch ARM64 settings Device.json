@@ -1,0 +1,47 @@
+{
+    "description": "Disables Compiled Hybrid PE (CHPE) — a unique prerequisite for Arm64 devices to enable Windows Autopatch.",
+    "name": "Windows Windows Autopatch ARM64 settings Device",
+    "platforms": "windows10",
+    "settingCount": 2,
+    "technologies": "mdm",
+    "templateReference": {
+        "templateFamily": "none",
+        "templateId": ""
+    },
+    "settings": [
+        {
+            "settingInstance": {
+                "choiceSettingValue": {
+                    "children": [],
+                    "value": "device_vendor_msft_policy_config_system_disablechpe_1",
+                    "settingValueTemplateReference": null,
+                    "@odata.type": "microsoft.graph.deviceManagementConfigurationChoiceSettingValue"
+                },
+                "settingDefinitionId": "device_vendor_msft_policy_config_system_disablechpe",
+                "auditRuleInformation": null,
+                "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance"
+            },
+            "settingDefinitions": null,
+            "settingDefinitions@odata.nextLink": null,
+            "id": "0",
+            "@odata.type": null
+        },
+        {
+            "settingInstance": {
+                "choiceSettingValue": {
+                    "children": [],
+                    "value": "device_vendor_msft_policy_config_virtualizationbasedtechnology_hypervisorenforcedcodeintegrity_2",
+                    "settingValueTemplateReference": null,
+                    "@odata.type": "microsoft.graph.deviceManagementConfigurationChoiceSettingValue"
+                },
+                "settingDefinitionId": "device_vendor_msft_policy_config_virtualizationbasedtechnology_hypervisorenforcedcodeintegrity",
+                "auditRuleInformation": null,
+                "@odata.type": "#microsoft.graph.deviceManagementConfigurationChoiceSettingInstance"
+            },
+            "settingDefinitions": null,
+            "settingDefinitions@odata.nextLink": null,
+            "id": "1",
+            "@odata.type": null
+        }
+    ]
+}
