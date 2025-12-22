@@ -6,7 +6,7 @@
     "createdDateTime@odata.type":  "#DateTimeOffset",
     "createdDateTime":  "2025-08-06T22:40:34.9658214Z",
     "creationSource":  null,
-    "description":  "** Do not modify without prior approval **  Baseline:  - MDM Security Baseline Version November 2021",
+    "description":  "  Baseline:  - MDM Security Baseline Version November 2021",
     "lastModifiedDateTime@odata.type":  "#DateTimeOffset",
     "lastModifiedDateTime":  "2025-08-06T22:40:34.9658214Z",
     "name":  "GoLive - DeviceGuard",

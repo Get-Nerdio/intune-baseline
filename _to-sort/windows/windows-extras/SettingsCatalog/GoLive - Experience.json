@@ -6,7 +6,7 @@
     "createdDateTime@odata.type":  "#DateTimeOffset",
     "createdDateTime":  "2025-04-30T22:32:59.7455592Z",
     "creationSource":  null,
-    "description":  "** Do not modify without prior approval **  Baseline:  - MDM Security Baseline Version November 2021",
+    "description":  "  Baseline:  - MDM Security Baseline Version November 2021",
     "lastModifiedDateTime@odata.type":  "#DateTimeOffset",
     "lastModifiedDateTime":  "2025-05-20T02:31:48.2638904Z",
     "name":  "GoLive - Experience",

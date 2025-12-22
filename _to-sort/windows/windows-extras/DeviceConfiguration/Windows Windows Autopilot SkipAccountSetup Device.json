@@ -17,7 +17,7 @@
     "createdDateTime@odata.type":  "#DateTimeOffset",
     "createdDateTime":  "2025-08-06T22:40:34.0772954Z",
     "description":  "From the Autopilot ESP, skip the account setup page if you have no user assigned apps to save time during initial deployment. Only device assigned application will be installed.",
-    "displayName":  "GoLive - Skip Autopilot account setup page",
+    "displayName":  "Windows Windows Autopilot SkipAccountSetup Device",
     "version":  1,
     "omaSettings@odata.type":  "#Collection(microsoft.graph.omaSetting)",
     "omaSettings":  [

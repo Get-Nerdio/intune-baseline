@@ -6,7 +6,7 @@
     "createdDateTime@odata.type":  "#DateTimeOffset",
     "createdDateTime":  "2025-04-30T22:28:07.7982004Z",
     "creationSource":  null,
-    "description":  "** Do not modify without prior approval **  Baseline:  - Creates administrator group \"MEM-Win-Admins-Assigned\" of specified users on Windows devices.  Note: Verify \"MEM-Win-Admins-Assigned\" group within the \"Configuration settings\".  Assign: To device Groups ",
+    "description":  "  Baseline:  - Creates administrator group \"MEM-Win-Admins-Assigned\" of specified users on Windows devices.  Note: Verify \"MEM-Win-Admins-Assigned\" group within the \"Configuration settings\".  Assign: To device Groups ",
     "lastModifiedDateTime@odata.type":  "#DateTimeOffset",
     "lastModifiedDateTime":  "2025-06-19T20:54:36.493987Z",
     "name":  "GoLive - Add Local Admin",
