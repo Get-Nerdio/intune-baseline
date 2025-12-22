@@ -9,7 +9,7 @@
     "description":  "Let the OneDrive client add a SharePoint Online team site library to Windows Explorer, to improve usability for users. Please set your customer\u0027s SharePoint Online Library ID by overriding the $InheritedVars.SPOLibraryID variable at the customer level. To get the required library ID, please refer to https://docs.microsoft.com/en-us/onedrive/use-group-policy#AutoMountTeamSites.",
     "lastModifiedDateTime@odata.type":  "#DateTimeOffset",
     "lastModifiedDateTime":  "2025-08-06T22:40:32.8728845Z",
-    "name":  "GoLive - Set OneDrive client to add SharePoint Online location",
+    "name":  "Windows Microsoft 365 Apps OneDrive SharePoint settings Device",
     "platforms@odata.type":  "#microsoft.graph.deviceManagementConfigurationPlatforms",
     "platforms":  "windows10",
     "priorityMetaData":  null,
