@@ -1,4 +1,4 @@
-# macos-extras
+# macos-mde
 
 | Name | Description |
 | ---- | ----------- |
