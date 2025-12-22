@@ -17,7 +17,7 @@
     "createdDateTime@odata.type":  "#DateTimeOffset",
     "createdDateTime":  "2025-09-30T16:33:36.1195009Z",
     "description":  "Verifications are left on. This can be turned off using these instructions.  https://learn.microsoft.com/en-us/defender-endpoint/mac-install-with-intune#step-5-notifications",
-    "displayName":  "[macOS][MDE] 5. Notifications ",
+    "displayName":  "macOS MDE 5. Notifications Device",
     "version":  1,
     "payloadName":  "MacOS Notifications consent",
     "payloadFileName":  "notif.mobileconfig",

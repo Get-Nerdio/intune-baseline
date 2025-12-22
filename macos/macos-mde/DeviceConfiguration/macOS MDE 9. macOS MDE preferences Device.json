@@ -17,7 +17,7 @@
     "createdDateTime@odata.type":  "#DateTimeOffset",
     "createdDateTime":  "2025-09-30T16:43:32.4444899Z",
     "description":  "Copied the code for the Intune recommended profile. https://learn.microsoft.com/en-us/defender-endpoint/mac-preferences#intune-recommended-profile",
-    "displayName":  "[macOS][MDE] 9. macOS wdav preferences",
+    "displayName":  "macOS MDE 9. macOS MDE preferences Device",
     "version":  1,
     "payloadName":  "com.microsoft.wdav",
     "payloadFileName":  "com.microsoft.wdav.xml",
