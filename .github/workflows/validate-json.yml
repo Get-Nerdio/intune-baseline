@@ -7,6 +7,10 @@ on:
         - 'windows/**/*.json'
         - 'macos/**/*.json'
 
+permissions:
+  contents: read
+  pull-requests: read
+
 jobs:
   validate-json:
     runs-on: ubuntu-latest

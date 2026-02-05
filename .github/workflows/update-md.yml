@@ -9,6 +9,9 @@ on:
             - 'windows/**'
             - 'macos/**'
 
+permissions:
+  contents: write
+
 jobs:
     release:
         runs-on: ubuntu-latest
