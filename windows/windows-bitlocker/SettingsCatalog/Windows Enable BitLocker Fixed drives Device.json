@@ -352,7 +352,7 @@
                                                                                                  "settingInstanceTemplateReference":  null,
                                                                                                  "choiceSettingValue":  {
                                                                                                                             "@odata.type":  "#microsoft.graph.deviceManagementConfigurationChoiceSettingValue",
-                                                                                                                            "value":  "device_vendor_msft_bitlocker_systemdrivesrecoveryoptions_osrecoverykeyusagedropdown_name_1",
+                                                                                                                            "value":  "device_vendor_msft_bitlocker_systemdrivesrecoveryoptions_osrecoverykeyusagedropdown_name_2",
                                                                                                                             "settingValueTemplateReference":  {
                                                                                                                                                                   "@odata.type":  "#microsoft.graph.deviceManagementConfigurationSettingValueTemplateReference",
                                                                                                                                                                   "settingValueTemplateId":  "2a756c45-f135-442f-9c01-829a9c9b5407",
