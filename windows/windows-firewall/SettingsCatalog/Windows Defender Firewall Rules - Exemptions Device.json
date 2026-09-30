@@ -6,7 +6,7 @@
     "createdDateTime@odata.type":  "#DateTimeOffset",
     "createdDateTime":  "2026-09-30T04:37:54.5650908Z",
     "creationSource":  null,
-    "description":  "Leverage Windows Microsoft Defender Firewall baseline Device. Use this rule to modify the default firewall rules to only allow necessary inbound traffic for Microsoft Teams and Wireless Display. All other inbound traffic is blocked. Outbound traffic is not modified. Add any further exemptions here (such as your RMM tool). \n\nApply to All Devices (optionally with filters) or Entra ID device groups.",
+    "description":  "Leverage Windows Microsoft Defender Firewall baseline Device. Use this rule to modify the default firewall rules to only allow necessary inbound traffic for Microsoft Teams and Wireless Display. All other inbound traffic is blocked. Outbound traffic is not modified. Add any further exemptions here (such as your RMM tool). Apply to All Devices (optionally with filters) or Entra ID device groups.",
     "lastModifiedDateTime@odata.type":  "#DateTimeOffset",
     "lastModifiedDateTime":  "2026-09-30T04:40:02.1674541Z",
     "name":  "Windows Defender Firewall Rules - Exemptions Device",

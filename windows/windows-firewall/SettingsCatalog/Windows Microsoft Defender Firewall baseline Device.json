@@ -6,7 +6,7 @@
     "createdDateTime@odata.type":  "#DateTimeOffset",
     "createdDateTime":  "2026-09-23T19:59:30.9266194Z",
     "creationSource":  null,
-    "description":  "Enables Windows Firewall on Domain, Private, and Public profiles with default inbound block and outbound allow, local rule merge disabled, and stealth mode on. Use the companion Windows Firewall Rules - Exemptions Device policy to add any exemptions needed, such as your RMM tool. \n\nApply to All Devices (optionally with filters) or Entra ID device groups.",
+    "description":  "Enables Windows Firewall on Domain, Private, and Public profiles with default inbound block and outbound allow, local rule merge disabled, and stealth mode on. Use the companion Windows Firewall Rules - Exemptions Device policy to add any exemptions needed, such as your RMM tool. Apply to All Devices (optionally with filters) or Entra ID device groups.",
     "lastModifiedDateTime@odata.type":  "#DateTimeOffset",
     "lastModifiedDateTime":  "2026-09-30T04:41:38.0548011Z",
     "name":  "Windows Microsoft Defender Firewall baseline Device",
