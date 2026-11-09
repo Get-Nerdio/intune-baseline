@@ -6,7 +6,7 @@
     "createdDateTime@odata.type":  "#DateTimeOffset",
     "createdDateTime":  "2026-09-23T19:59:25.5098871Z",
     "creationSource":  null,
-    "description":  "Disables the built-in local Administrator and Guest accounts. The LAPS-managed local admin account becomes the recovery path if Entra connectivity is unavailable. Needed for Cyber Essentials 3.3. Apply to All Devices (optionally with filters) or Entra ID device groups.",
+    "description":  "Disables the built-in local Administrator and Guest accounts and blocks Microsoft accounts (users can't add or sign in with personal Microsoft accounts). The LAPS-managed local admin account becomes the recovery path if Entra connectivity is unavailable. Needed for Cyber Essentials 3.3. Apply to All Devices (optionally with filters) or Entra ID device groups.",
     "lastModifiedDateTime@odata.type":  "#DateTimeOffset",
     "lastModifiedDateTime":  "2026-09-30T03:54:27.6031345Z",
     "name":  "Windows Local Account hardening Device",
